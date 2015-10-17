@@ -1,0 +1,59 @@
+topic: ~Conversation()
+language: jpj
+
+u:(e:onStart) ^nextProposal
+
+proposal: しりたいのはあいずべん？
+ u1: (はい) %aizuq 知りたい方言はなんですか？  
+    
+    u2:(あいばっせ) ^start(Stand/Gestures/Explain_2) 行きましょう ^wait(Stand/Gestures/Explain_2)  ^gotoReactivate(aizuq)   
+    u2:(あがらんしょ) ^start(LetsEat) めしあがってください、中に入ってください ^wait(LetsEat) $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(おばんです)こんばんは $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(かたす)片付ける $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(けえ) ^start(LetsEat) 食べる ^wait(LetsEat) $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(くんつぇ)ください $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(こお)おいで $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(こめら)子供達 $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(さすけね)大丈夫だ、問題ない $myapp/event1=$1 ^gotoReactivate(aizuq) 
+    u2:(_[したがら したから んだから])だから  $myapp/event1=$1 
+    u2:(とぶ)走る $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(なげる)すてる $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(なじょすんべ)どうする？ $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(_[ほだごど ほだこと])そのこと $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(_[めごい めんこい])かわいい $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(やっこい)やわらかい $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(やんだ)いやだ $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(_[よがんべ よかんべ])いいでしょう $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(んだ)そうだ $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(んでね)そうではない $myapp/event1=$1 ^gotoReactivate(aizuq)
+    u2:(e:Dialog/NotUnderstood) わかりません ^gotoReactivate(aizuq)
+ u1: (_[いいえ いや　違います]) ^nextProposal
+ 
+ 
+proposal: 標準語を方言にしたいんですか？
+ u1: (はい) %mainstreamq 標準語言ってください。
+    u2:(_[行きましょう いこう])あいばっせ $myapp/event1=$1 ^goto(mainstreamq)  
+    u2:(行くよ)あいべ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(_[めしあがってください 中に入ってください])あがらんしょ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(こんばんは)おばんです $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(片付ける)かたす $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(食べる)けえ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(ください)くんつぇ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(おいで)こお $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(子供達)こめら $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(_[大丈夫だ 問題ない 大丈夫])さすけね $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(だから)したがら したから んだから  $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(走る)とぶ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(すてる)なげる $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(どうする)なじょすんべ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(そのこと)ほだごど ほだこと $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(かわいい)めごい めんこい $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(やわらかい)やっこい $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(いやだ)やんだ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(_[いいでしょう いや])よがんべ よかんべ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(そうだ)んだ $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(_[そうではない そうじゃない])んでね $myapp/event1=$1 ^goto(mainstreamq) 
+    u2:(e:Dialog/NotUnderstood) わかりません ^goto(mainstreamq)
+ u1: (_[いいえ いや　違います]) じゃばいばい
+  
+ 

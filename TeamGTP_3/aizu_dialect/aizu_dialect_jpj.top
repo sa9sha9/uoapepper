@@ -1,0 +1,30 @@
+topic: ~aizu_dialect()
+language: jpj
+  
+u:(あいばっせ) ^start(SpreadArms) 行きましょう ^wait(SpreadArms) $myapp/event1=$1   
+u:(あいべ) 行くよ $myapp/event1=$1 
+u:(あがらんしょ) ^start(LetsEat) めしあがってください、中に入ってください ^wait(LetsEat) $myapp/event1=$1 
+u:(おばんです)こんばんは $myapp/event1=$1 
+u:(かたす)片付ける $myapp/event1=$1 
+u:(けえ) ^start(LetsEat) 食べる ^wait(LetsEat) $myapp/event1=$1 
+u:(くんつぇ)ください $myapp/event1=$1 
+u:(こお)おいで $myapp/event1=$1 
+u:(こめら)子供達 $myapp/event1=$1 
+u:(さすけね)大丈夫だ、問題ない $myapp/event1=$1 
+u:(_[したがら したから んだから])だから  $myapp/event1=$1 
+u:(とぶ)走る $myapp/event1=$1 
+u:(なげる)すてる $myapp/event1=$1 
+u:(なじょすんべ)どうする？ $myapp/event1=$1 
+u:(_[ほだごど ほだこと])そのこと $myapp/event1=$1
+u:(_[めごい めんこい])かわいい $myapp/event1=$1
+u:(やっこい)やわらかい $myapp/event1=$1
+u:(やんだ)いやだ $myapp/event1=$1
+u:(_[よがんべ よかんべ])いいでしょう $myapp/event1=$1
+u:(んだ)そうだ $myapp/event1=$1
+u:(んでね)そうではない $myapp/event1=$1
+
+u:(e:Dialog/NotUnderstood) わかりません
+
+
+
+ 

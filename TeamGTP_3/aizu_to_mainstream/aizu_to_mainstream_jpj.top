@@ -1,0 +1,30 @@
+topic: ~aizu_dialect()
+language: jpj
+  
+u:(_[行きましょう いこう])あいばっせ $myapp/event1=$1   
+u:(行くよ)あいべ $myapp/event1=$1 
+u:(_[めしあがってください 中に入ってください])あがらんしょ $myapp/event1=$1 
+u:(こんばんは)おばんです $myapp/event1=$1 
+u:(片付ける)かたす $myapp/event1=$1 
+u:(食べる)けえ $myapp/event1=$1 
+u:(ください)くんつぇ $myapp/event1=$1 
+u:(おいで)こお $myapp/event1=$1 
+u:(子供達)こめら $myapp/event1=$1 
+u:(_[大丈夫だ 問題ない 大丈夫])さすけね $myapp/event1=$1 
+u:(だから)したがら したから んだから  $myapp/event1=$1 
+u:(走る)とぶ $myapp/event1=$1 
+u:(すてる)なげる $myapp/event1=$1 
+u:(どうする)なじょすんべ $myapp/event1=$1 
+u:(そのこと)ほだごど ほだこと $myapp/event1=$1
+u:(かわいい)めごい めんこい $myapp/event1=$1
+u:(やわらかい)やっこい $myapp/event1=$1
+u:(いやだ)やんだ $myapp/event1=$1
+u:(_[いいでしょう いや])よがんべ よかんべ $myapp/event1=$1
+u:(そうだ)んだ $myapp/event1=$1
+u:(_[そうではない そうじゃない])んでね $myapp/event1=$1
+
+u:(e:Dialog/NotUnderstood) わかりません
+
+
+
+ 
