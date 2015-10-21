@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PEPPER UI</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="bower_components/onsenui/build/css/onsenui.css" />
+    <link rel="stylesheet" href="bower_components/onsenui/build/css/onsen-css-components.css" />
+    <script src="http://mb.cloud.nifty.com/assets/sdk/javascript/ncmb-latest.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script> -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/onsenui/build/js/onsenui.min.js"></script>
+    <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+    <script src="script.js"></script>
+    <style>
+#menu .page-container {
+  height: 100%;
+}
+#menu .page-container .sentence {
+  display: flex;
+  height: 30%;
+  font-size: 3em;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+#menu .buttons {
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+}
+#menu .page-container button {
+  height: 10em;
+  width: 40%;
+  margin: 10%;
+  border-radius: 50%;
+}
+.result {
+  text-align: 100%;
+  font-size: 10em;
+}
+    </style>
+  </head>
+  <body>
+    <script>
+    </script>
+    <!-- イントネーションを編集できるUI -->
+    <ons-navigator var="baseNav">
+      <ons-page id="menu">
+        <div class="page-container">
+          <div class="sentence">
+            <span>Pepperに</span>
+          </div>
+          <div class="buttons">
+            <button class="button button--large" onclick="changeFunc('pull')">教えてもらう</button>
+            <button class="button button--large" onclick="changeFunc('post')">教える</button>
+          </div>
+        </div>
+      </ons-page>
+    </ons-navigator>
+    <!-- <ons&#45;template id="menu"> -->
+    <!--   <ons&#45;page> -->
+    <!--     <button class="button button&#45;&#45;large" onclick="changeFunc('pull')">Pepperに教えてもらう</button> -->
+    <!--     <button class="button button&#45;&#45;large" onclick="changeFunc('post')">Pepperに教える</button> -->
+    <!--   </ons&#45;page> -->
+    <!-- </ons&#45;template> -->
+    <ons-template id="pull">
+      <ons-page>
+        <div class="result">Pull</div>
+      </ons-page>
+    </ons-template>
+    <ons-template id="post">
+      <ons-page>
+        <div>Post</div>
+      </ons-page>
+    </ons-template>
+    <!-- <one&#45;template id="edit&#45;intonation" ng&#45;app="atapp"> -->
+    <!--   <ons&#45;page ng&#45;controller="editIntonationController as editIntonation"> -->
+    <!--     <div ng&#45;repeat="char in editIntonation.aizuChars"> -->
+    <!--       <span>{{char}}</span> -->
+    <!--     </div> -->
+    <!--   </ons&#45;page> -->
+    <!-- </ons&#45;template> -->
+  </body>
+</html>

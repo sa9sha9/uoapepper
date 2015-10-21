@@ -1,0 +1,22 @@
+topic: ~Conversation()
+language: jpj
+dynamic:dic
+u:(e:onStart) ^nextProposal
+
+proposal: しりたいのはあいずべん？
+ u1: (はい) %aizuq 知りたい方言はなんですか？
+    u2:(_~dic) ^start(Stand/Gestures/Explain_2)  $myapp/pullheard=$1 ^wait(Stand/Gestures/Explain_2)
+    u2:(e:Dialog/NotUnderstood) わかりません 
+ u1: (_[いいえ いや　違います]) ^nextProposal
+ 
+proposal: 標準語を方言にしたいんですか？ 
+ u1: (はい) $myapp/func=push %mainstreamq 標準語を言ってください。
+    u2:(e:Dialog/NotUnderstood) わかりません ^goto(mainstreamq)
+ u1: (_[いいえ いや　違います]) じゃばいばい
+  
+u:(e:myapp/say) $myapp/say といういみです \pau=1000\ ^gotoReactivate(aizuq)
+
+u:(e:myapp/askAizuDialect) 方言で話してください
+    u1:(_*)  $myapp/hougen=$1 標準語は 
+        u2:(_*) ありがとうございます $myapp/hougen を $1 として登録します
+  
