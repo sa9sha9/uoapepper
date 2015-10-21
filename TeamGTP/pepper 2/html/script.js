@@ -1,8 +1,8 @@
-(function() {
-  var appKey = '7e5a3a3b417737d5cd3a81a2b1be311e60ceff372f3fa8c39b26361457ce8336';
-  var clientKey = 'e4e1d27d0db94d4aac54b356e074370549a1fcbb8594e98609b6b1f33369fe40';
-  NCMB.initialize(appKey, clientKey);
-})();
+// (function() {
+//   var appKey = '7e5a3a3b417737d5cd3a81a2b1be311e60ceff372f3fa8c39b26361457ce8336';
+//   var clientKey = 'e4e1d27d0db94d4aac54b356e074370549a1fcbb8594e98609b6b1f33369fe40';
+//   NCMB.initialize(appKey, clientKey);
+// })();
 (function() {
   ons.bootstrap();
   // var module = ons.bootstrap(document.body, ['onsen']);
@@ -22,85 +22,124 @@
   });
   var currentFuncName = 'loading';
   var Dic = function() {
-    var DicClass = NCMB.Object.extend('dictionaryClass');
-    var dicClassOperator = new DicClass;
+    // var DicClass = NCMB.Object.extend('dictionaryClass');
+    var ref = new Firebase('https://teamgpt.firebaseio.com');
+    console.log(ref);
+    // var dicClassOperator = new DicClass;
     return {
       allAizuList: function() {
         return new Promise(function(resolve, reject) {
-          var query = new NCMB.Query(DicClass);
-          query.find({
-            success: function(dics){
-              var result = [];
-              for(var i = 0; i < dics.length; i++) {
-                result.push(dics[i].get('Aizu'));
-              }
-              resolve(result);
-            },
-            error: function() {
-              reject();
-            }
+          // var query = new NCMB.Query(DicClass);
+          // query.find({
+          //   success: function(dics){
+          //     var result = [];
+          //     for(var i = 0; i < dics.length; i++) {
+          //       result.push(dics[i].get('Aizu'));
+          //     }
+          //     resolve(result);
+          //   },
+          //   error: function() {
+          //     reject();
+          //   }
+          // });
+          ref.on('value', function(snapshot) {
+            resolve(snapshot.val());
+          }, function(error) {
+            reject(error);
           });
+        }).then(function(dics) {
+          return Object.keys(dics).map(function(key) {
+            return dics[key]['Aizu'];
+          });
+        }).catch(function(error) {
+          console.log(error);
+        }).then(function(aizus) {
+          console.log(aizus);
         });
       },
       toAizu: function(tokyo) {
         return new Promise(function(resolve, reject) {
-          var query = new NCMB.Query(DicClass);
-          query.equalTo('Tokyo', tokyo);
-          query.first({
-            success: function(result) {
-              resolve(first);
-            },
-            error: function() {
-              reject();
-            }
+          // var query = new NCMB.Query(DicClass);
+          // query.equalTo('Tokyo', tokyo);
+          // query.first({
+          //   success: function(result) {
+          //     resolve(first);
+          //   },
+          //   error: function() {
+          //     reject();
+          //   }
+          // });
+          ref.orderByChild('Aizu').equalTo(tokyo).on('value', function(snapshot) {
+            resolve(snapshot.val());
+          }, function(error) {
+            reject(error);
           });
+        }).then(function(dics) {
+          return (dics == null ? null : dics[Object.keys(dics)[0]]['Tokyo']);
+        }).catch(function(error) {
+          console.log(error);
         });
       },
       toTokyo: function(aizu) {
         return new Promise(function(resolve, reject) {
-          var query = new NCMB.Query(DicClass);
-          query.equalTo('Aizu', aizu);
-          query.first({
-            success: function(result) {
-              resolve(first);
-            },
-            error: function() {
-              reject();
-            }
+          // var query = new NCMB.Query(DicClass);
+          // query.equalTo('Aizu', aizu);
+          // query.first({
+          //   success: function(result) {
+          //     resolve(first);
+          //   },
+          //   error: function() {
+          //     reject();
+          //   }
+          // });
+          ref.orderByChild('Tokyo').equalTo(aizu).on('value', function(snapshot) {
+            resolve(snapshot.val());
+          }, function(error) {
+            reject(error);
           });
+        }).then(function(dics) {
+          return (dics == null ? null : dics[Object.keys(dics)[0]]['Aizu']);
+        }).catch(function(error) {
+          console.log(error);
         });
       },
       toPair: function(one) {
-        return new Promise(function(resolve, reject) {
-          var queryGetTokyo = new NCMB.Query(DicClass);
-          queryGetTokyo.equalTo('Aizu', one);
-          var queryGetAizu = new NCMB.Query(DicClass);
-          queryGetAizu.equalTo('Tokyo', one);
-          var query = NCMB.Query.or(queryGetAizu, queryGetTokyo);
-          query.first({
-            success: function(result) {
-              resolve(result);
-            },
-            error: function() {
-              reject();
-            }
-          });
+        // return new Promise(function(resolve, reject) {
+        //   var queryGetTokyo = new NCMB.Query(DicClass);
+        //   queryGetTokyo.equalTo('Aizu', one);
+        //   var queryGetAizu = new NCMB.Query(DicClass);
+        //   queryGetAizu.equalTo('Tokyo', one);
+        //   var query = NCMB.Query.or(queryGetAizu, queryGetTokyo);
+        //   query.first({
+        //     success: function(result) {
+        //       resolve(result);
+        //     },
+        //     error: function() {
+        //       reject();
+        //     }
+        //   });
+        // });
+        var self = this;
+        return Promise.all([this.toAizu(one), this.toTokyo(one)]).then(function(results) {
+          return (results[0] == null ? results[1] : results[0]);
+        }).catch(function(error) {
+          console.log(error);
         });
       },
       addNewEntry: function(obj) {
-        return new Promise(function(resolve, reject) {
-          (new DicClass()).save({
-            Tokyo: obj.tokyo,
-            Aizu: obj.aizu
-          }, {
-            success: function(dic) {
-              resolve();
-            },
-            error: function(dic, error) {
-              reject();
-            }
-          });
-        });
+        // return new Promise(function(resolve, reject) {
+        //   (new DicClass()).save({
+        //     Tokyo: obj.tokyo,
+        //     Aizu: obj.aizu
+        //   }, {
+        //     success: function(dic) {
+        //       resolve();
+        //     },
+        //     error: function(dic, error) {
+        //       reject();
+        //     }
+        //   });
+        // });
       }
     };
   };
