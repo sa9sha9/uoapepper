@@ -14,9 +14,10 @@
         <Dialog name="aizu_to_mainstream" src="aizu_to_mainstream/aizu_to_mainstream.dlg" />
         <Dialog name="Conversation" src="Conversation/Conversation.dlg" />
         <Dialog name="ExampleDialog" src="ExampleDialog/ExampleDialog.dlg" />
+        <Dialog name="say_result" src="say_result/say_result.dlg" />
     </Dialogs>
     <Resources>
-        <File name="surprise3" src="behavior_1/surprise3.ogg" />
+        <File name="surprise3" src="html/surprise3.ogg" />
         <File name="choice_sentences_light" src="Aldebaran/choice_sentences_light.xml" />
         <File name="index" src="html/index.html" />
         <File name="script" src="html/script.js" />
@@ -93,29 +94,31 @@
         <Topic name="aizu_dialect_enu" src="aizu_dialect/aizu_dialect_enu.top" topicName="aizu_dialect" language="en_US" />
         <Topic name="aizu_dialect_jpj" src="aizu_dialect/aizu_dialect_jpj.top" topicName="aizu_dialect" language="ja_JP" />
         <Topic name="ConfirmInput_enu" src="ConfirmInput/ConfirmInput_enu.top" topicName="ConfirmInput" language="en_US" />
-        <Topic name="ConfirmInput_jpj" src="ConfirmInput/ConfirmInput_jpj.top" topicName="" language="" />
         <Topic name="aizu_to_mainstream_enu" src="aizu_to_mainstream/aizu_to_mainstream_enu.top" topicName="aizu_to_mainstream" language="en_US" />
         <Topic name="aizu_to_mainstream_jpj" src="aizu_to_mainstream/aizu_to_mainstream_jpj.top" topicName="aizu_dialect" language="ja_JP" />
         <Topic name="Conversation_enu" src="Conversation/Conversation_enu.top" topicName="Conversation" language="en_US" />
-        <Topic name="Conversation_jpj" src="Conversation/Conversation_jpj.top" topicName="Conversation" language="ja_JP" />
+        <Topic name="Conversation_jpj" src="ExampleDialog/Conversation_jpj.top" topicName="Conversation" language="ja_JP" />
         <Topic name="ExampleDialog_enu" src="ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
+        <Topic name="Conversation_jpj" src="Conversation/Conversation_jpj.top" topicName="Conversation" language="ja_JP" />
+        <Topic name="say_result_jpj" src="say_result/say_result_jpj.top" topicName="say_result" language="ja_JP" />
+        <Topic name="ExampleDialog_jpj" src="ExampleDialog/ExampleDialog_jpj.top" topicName="ExampleDialog" language="ja_JP" />
     </Topics>
     <IgnoredPaths>
-        <Path src="" />
-        <Path src=".DS_Store" />
-        <Path src="ConfirmInput/ConfirmInput.dlg" />
-        <Path src="TeamGTP_3.pml" />
-        <Path src="behavior_1" />
-        <Path src="manifest.xml" />
-        <Path src="behavior_1/surprise3.ogg" />
-        <Path src="ConfirmInput/ConfirmInput_jpj.top" />
-        <Path src="ConfirmInput/ConfirmInput_enu.top" />
-        <Path src=".metadata" />
         <Path src="ConfirmInput" />
-        <Path src="html/.DS_Store" />
-        <Path src="ComeHere" />
-        <Path src="aizu_dialect" />
-        <Path src="aizu_dialect/aizu_dialect_enu.top" />
+        <Path src=".metadata" />
+        <Path src="TeamGTP_3.pml" />
+        <Path src="ConfirmInput/ConfirmInput_jpj.top" />
+        <Path src="behavior_1" />
+        <Path src="ConfirmInput/ConfirmInput.dlg" />
         <Path src="aizu_dialect/aizu_dialect.dlg" />
+        <Path src="" />
+        <Path src="ConfirmInput/.DS_Store" />
+        <Path src=".DS_Store" />
+        <Path src="aizu_dialect/aizu_dialect_enu.top" />
+        <Path src="behavior_1/surprise3.ogg" />
+        <Path src="manifest.xml" />
+        <Path src="Conversation/.DS_Store" />
+        <Path src="ConfirmInput/ConfirmInput_enu.top" />
+        <Path src="aizu_dialect" />
     </IgnoredPaths>
 </Package>

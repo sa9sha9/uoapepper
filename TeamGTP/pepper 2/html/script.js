@@ -168,12 +168,13 @@
       subscriber.signal.connect(function(saidStr) {
         dic.toPair(saidStr).then(function(entry) {
           ALMemory.raiseEvent('myapp/pullfound', {
-            tokyo: entry.get('Tokyo'),
-            aizu: entry.get('Aizu')
+            tokyo: entry,
+            //aizu: entry['Aizu']
           });
-          document.querySelector('.result').innerText = (
-              (saidStr == entry.get('Tokyo')) ? entry.get('Aizu') : entry.get('Tokyo')
-          );
+          console.log(entry);
+          //document.querySelector('.result').innerText = (
+          //    (saidStr == entry.get('Tokyo')) ? entry.get('Aizu') : entry.get('Tokyo')
+          //);
         });
       });
     });

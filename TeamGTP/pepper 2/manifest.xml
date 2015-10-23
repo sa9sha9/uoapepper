@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package version="0.0.0" uuid="teamgtp_3-185cfa">
+<package uuid="teamgtp_3-185cfa" version="0.0.0">
  <names>
   <name lang="en_US">TeamGTP_3</name>
  </names>
@@ -12,6 +12,9 @@
  <contents>
   <behaviorContent path=".">
    <nature>interactive</nature>
+   <triggerSentences/>
+   <loadingResponses/>
+   <autonomous/>
    <permissions/>
   </behaviorContent>
   <behaviorContent path="ConfirmInput">

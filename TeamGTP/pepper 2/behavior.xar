@@ -14,7 +14,8 @@
         <Input name="myapp/dic" type="0" type_size="1" nature="4" stm_value_name="myapp/dic" inner="1" tooltip="myapp/dic desc" id="5" />
         <Input name="myapp/pullheard" type="0" type_size="1" nature="4" stm_value_name="myapp/pullheard" inner="1" tooltip="myapp/pullheard desc" id="6" />
         <Input name="myapp/pullfound" type="0" type_size="1" nature="4" stm_value_name="myapp/pullfound" inner="1" tooltip="myapp/pullfound desc" id="7" />
-        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="8" />
+        <Input name="myapp/say" type="0" type_size="1" nature="4" stm_value_name="myapp/say" inner="1" tooltip="myapp/say desc" id="8" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="9" />
         <Timeline enable="0">
             <BehaviorLayer name="behavior_layer1">
                 <BehaviorKeyframe name="keyframe1" index="1">
@@ -122,25 +123,27 @@ class MyClass(GeneratedClass):
 
 		self.tts = ALProxy("ALTextToSpeech")
 		self.sentences = {
-			"Chinese" : " 你好 ",
-			"English" : " Hello ",
-			"French" : " Bonjour ",
+			"Arabic" : " مرحبا ",
+			"Czech" : " Ahoj ",
+			"Danish" : " Hej ",
 			"German" : " Hallo ",
+			"Greek" : "  ",
+			"English" : " Hello ",
+			"Spanish" : " Hola ",
+			"Finnish" : " Hei ",
+			"French" : " Bonjour ",
 			"Italian" : " Ciao ",
 			"Japanese" : " という意味です ",
 			"Korean" : " 안녕하세요 ",
-			"Portuguese" : " Olá ",
-			"Brazilian" : " Olá ",
-			"Spanish" : " Hola ",
-			"Arabic" : " مرحبا ",
-			"Polish" : " Cześć ",
-			"Czech" : " Ahoj ",
 			"Dutch" : " Hallo ",
-			"Danish" : " Hej ",
-			"Finnish" : " Hei ",
-			"Swedish" : " Hallå ",
+			"Norwegian" : "  ",
+			"Polish" : " Cześć ",
+			"Brazilian" : " Olá ",
+			"Portuguese" : " Olá ",
 			"Russian" : " Привет ",
-			"Turkish" : " Merhaba "
+			"Swedish" : " Hallå ",
+			"Turkish" : " Merhaba ",
+			"Chinese" : " 你好 "
 		}
 
 	def onInput_onStart(self):
@@ -149,18 +152,33 @@ class MyClass(GeneratedClass):
 </content>
                                                 </script>
                                                 <pluginContent>
-                                                    <chinese>
-                                                        <![CDATA[你好]]>
-</chinese>
-                                                    <english>
-                                                        <![CDATA[Hello]]>
-</english>
-                                                    <french>
-                                                        <![CDATA[Bonjour]]>
-</french>
+                                                    <arabic>
+                                                        <![CDATA[مرحبا]]>
+</arabic>
+                                                    <czech>
+                                                        <![CDATA[Ahoj]]>
+</czech>
+                                                    <danish>
+                                                        <![CDATA[Hej]]>
+</danish>
                                                     <german>
                                                         <![CDATA[Hallo]]>
 </german>
+                                                    <greek>
+                                                        <![CDATA[]]>
+</greek>
+                                                    <english>
+                                                        <![CDATA[Hello]]>
+</english>
+                                                    <spanish>
+                                                        <![CDATA[Hola]]>
+</spanish>
+                                                    <finnish>
+                                                        <![CDATA[Hei]]>
+</finnish>
+                                                    <french>
+                                                        <![CDATA[Bonjour]]>
+</french>
                                                     <italian>
                                                         <![CDATA[Ciao]]>
 </italian>
@@ -170,43 +188,34 @@ class MyClass(GeneratedClass):
                                                     <korean>
                                                         <![CDATA[안녕하세요]]>
 </korean>
-                                                    <portuguese>
-                                                        <![CDATA[Olá]]>
-</portuguese>
-                                                    <brazilian>
-                                                        <![CDATA[Olá]]>
-</brazilian>
-                                                    <spanish>
-                                                        <![CDATA[Hola]]>
-</spanish>
-                                                    <arabic>
-                                                        <![CDATA[مرحبا]]>
-</arabic>
-                                                    <polish>
-                                                        <![CDATA[Cześć]]>
-</polish>
-                                                    <czech>
-                                                        <![CDATA[Ahoj]]>
-</czech>
                                                     <dutch>
                                                         <![CDATA[Hallo]]>
 </dutch>
-                                                    <danish>
-                                                        <![CDATA[Hej]]>
-</danish>
-                                                    <finnish>
-                                                        <![CDATA[Hei]]>
-</finnish>
-                                                    <swedish>
-                                                        <![CDATA[Hallå]]>
-</swedish>
+                                                    <norwegian>
+                                                        <![CDATA[]]>
+</norwegian>
+                                                    <polish>
+                                                        <![CDATA[Cześć]]>
+</polish>
+                                                    <brazilian>
+                                                        <![CDATA[Olá]]>
+</brazilian>
+                                                    <portuguese>
+                                                        <![CDATA[Olá]]>
+</portuguese>
                                                     <russian>
                                                         <![CDATA[Привет]]>
 </russian>
+                                                    <swedish>
+                                                        <![CDATA[Hallå]]>
+</swedish>
                                                     <turkish>
                                                         <![CDATA[Merhaba]]>
 </turkish>
-                                                    <language>0</language>
+                                                    <chinese>
+                                                        <![CDATA[你好]]>
+</chinese>
+                                                    <language>10</language>
                                                 </pluginContent>
                                                 <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
                                                 <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Data is sent on the output when this input is stimulated." id="2" />
@@ -833,12 +842,12 @@ class MyClass(GeneratedClass):
         #self.onStopped() #activate the output of the box
         orig = self.memory.getData("myapp/pullheard")
 
-        if entry[1] == orig:
-            self.logger.info(entry[0][1])
+        if entry == orig:
+            self.logger.info(entry)
             self.memory.raiseEvent("myapp/say", entry[0][1])
         else:
-            self.logger.info(entry[1][1])
-            self.memory.raiseEvent("myapp/say", entry[1][1])
+            self.logger.info(entry)
+            self.memory.raiseEvent("myapp/say", entry[0][1])
 
         pass
 
@@ -931,11 +940,27 @@ class MyClass(GeneratedClass):
                                 <Choice value="Debug" />
                             </Parameter>
                         </Box>
+                        <Box name="Dialog" id="15" localization="8" tooltip="An example of multilanguage dialog implementation" x="502" y="331">
+                            <dialogFile>ExampleDialog/ExampleDialog.dlg</dialogFile>
+                            <bitmap>media/images/box/box-dialog.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Output name="playAGame" type="1" type_size="1" nature="2" inner="0" tooltip="stimulated using $playAGame=1 in qiChat script when User wants to play a game&#x0A;" id="5" />
+                            <Resource name="Speech" type="Lock" timeout="0" />
+                            <Resource name="Speech recognition" type="Lock" timeout="0" />
+                        </Box>
                         <Link inputowner="4" indexofinput="7" outputowner="6" indexofoutput="3" />
                         <Link inputowner="4" indexofinput="2" outputowner="7" indexofoutput="4" />
                         <Link inputowner="8" indexofinput="2" outputowner="4" indexofoutput="5" />
                         <Link inputowner="2" indexofinput="2" outputowner="0" indexofoutput="2" />
-                        <Link inputowner="0" indexofinput="8" outputowner="2" indexofoutput="4" />
+                        <Link inputowner="0" indexofinput="9" outputowner="2" indexofoutput="4" />
                         <Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" />
                         <Link inputowner="10" indexofinput="2" outputowner="0" indexofoutput="4" />
                         <Link inputowner="12" indexofinput="2" outputowner="0" indexofoutput="5" />
