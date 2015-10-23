@@ -53,8 +53,6 @@
           });
         }).catch(function(error) {
           console.log(error);
-        }).then(function(aizus) {
-          console.log(aizus);
         });
       },
       toAizu: function(tokyo) {
