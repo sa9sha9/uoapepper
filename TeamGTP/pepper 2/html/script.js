@@ -64,7 +64,7 @@
     };
   };
   var dic = Dic();
-  window.dic = dic;
+  window.dic = dic; // for debug
   var allAizuListReadyPromise = dic.allAizuList();
   var ALMemoryReadyPromise = new Promise(function(resolve, reject) {
     if(window.QiSession == undefined) {
