@@ -104,21 +104,20 @@
         <Topic name="ExampleDialog_jpj" src="ExampleDialog/ExampleDialog_jpj.top" topicName="ExampleDialog" language="ja_JP" />
     </Topics>
     <IgnoredPaths>
-        <Path src="ConfirmInput" />
-        <Path src=".metadata" />
-        <Path src="TeamGTP_3.pml" />
-        <Path src="ConfirmInput/ConfirmInput_jpj.top" />
-        <Path src="behavior_1" />
         <Path src="ConfirmInput/ConfirmInput.dlg" />
-        <Path src="aizu_dialect/aizu_dialect.dlg" />
         <Path src="" />
-        <Path src="ConfirmInput/.DS_Store" />
         <Path src=".DS_Store" />
-        <Path src="aizu_dialect/aizu_dialect_enu.top" />
-        <Path src="behavior_1/surprise3.ogg" />
+        <Path src="TeamGTP_3.pml" />
         <Path src="manifest.xml" />
-        <Path src="Conversation/.DS_Store" />
+        <Path src=".metadata" />
         <Path src="ConfirmInput/ConfirmInput_enu.top" />
+        <Path src="ConfirmInput/.DS_Store" />
+        <Path src="Conversation/.DS_Store" />
+        <Path src="ConfirmInput" />
+        <Path src="html/.DS_Store" />
+        <Path src="ComeHere" />
+        <Path src="aizu_dialect/aizu_dialect_enu.top" />
         <Path src="aizu_dialect" />
+        <Path src="aizu_dialect/aizu_dialect.dlg" />
     </IgnoredPaths>
 </Package>

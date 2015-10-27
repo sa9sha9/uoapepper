@@ -1,0 +1,25 @@
+topic: ~conversation()
+language: jpj
+
+topic: ~conversation()
+language: jpj
+
+concept:(greeting) ^rand[おっす　おはよう　こんにちは　こんばんは　やあ　やっほー　どうも　ねえ おっす　ペッパー pepper イエス]
+concept:(yes) [詳しい　はい　うん　いえす　そうだね　おっけー　知って]
+concept:(no) [詳しくない　いいや　いいえ　いや　そうでもない　知らない　ノー]
+
+proposal: %greeting こんにちは、
+proposal:%aizu 僕はいま、会津弁について勉強しているんですよー。あなたは会津弁、詳しいですか？。
+    u1:({*}~yes{*})それじゃあ、会津弁教えて下さい！僕の知らない会津弁をディスプレイに表示しますね！何か知っているものがあったら、タッチしてください。 $know=1
+    u1:({*}~no{*})そうなんですね。じゃあ、代わりに僕が会津弁を教えてあげましょう！知りたい会津弁をタッチしてください。$dontknow=1
+    u1:(e:Dialog/NoUnderstood) $output=1
+    
+
+u:({*}~greeting{*}) ^nextProposal ^nextProposal
+u:({*}~yes{*}) それじゃあ、どれかタッチしてみてください。　$yes=1
+u:({*}~no{*})　わかりました。それじゃあ、また寝ぇー。 $no=1
+u:({*}調子{*}) $state=1
+
+#_は変数格納$nで使用
+u:(_* って知ってる？) $1　ですか？ちょっと知らないですね。
+u:(_[りんご　ばなな　みかん]が食べたい) $1 なら、うちにありますよー
