@@ -1,0 +1,27 @@
+#menu .page-container {
+  height: 100%;
+}
+#menu .page-container .sentence {
+  display: flex;
+  height: 30%;
+  font-size: 3em;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+#menu .buttons {
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+}
+#menu .page-container button {
+  height: 10em;
+  width: 40%;
+  margin: 10%;
+  border-radius: 50%;
+}
+.result {
+  text-align: 100%;
+  font-size: 10em;
+}
