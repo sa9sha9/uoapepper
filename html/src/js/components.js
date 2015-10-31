@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import Firebase from 'firebase';
 
 class Dic {
   constructor() {
@@ -44,10 +45,10 @@ class Dic {
     });
   }
   toAizu(tokyo) {
-    return toBy(this.columnNames.aizu, tokyo);
+    return this.toBy(this.columnNames.aizu, tokyo);
   }
   toTokyo(aizu) {
-    return toBy(this.columnNames.tokyo, aizu);
+    return this.toBy(this.columnNames.tokyo, aizu);
   }
 }
 
