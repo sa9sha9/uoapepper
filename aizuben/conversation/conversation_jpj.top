@@ -14,6 +14,9 @@ proposal:%aizu 僕はいま、会津弁について勉強しているんです�
     u1:({*}~no{*})そうなんですね。じゃあ、代わりに僕が会津弁を教えてあげましょう！知りたい会津弁をタッチしてください。$dontknow=1
     u1:(e:Dialog/NoUnderstood) $output=1
     
+u:({*}~yes{*}) それじゃあ、どれかタッチしてみてください。　$yes=1
+u:({*}~no{*})　わかりました。それじゃあ、また寝ぇー。 $no=1
+
 
 u:({*}~greeting{*}) ^nextProposal ^nextProposal
 u:({*}調子{*}) $state=1
