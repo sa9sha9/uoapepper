@@ -123,20 +123,12 @@ class AizuList extends React.Component {
         <li onClick={this.makeAizuClickHandler(aizu).bind(this)} key={makeHashLikeStr(aizu)}>
           <span className="aizu">{aizu}</span>
         </li>
-        // <button className="btn btn-danger" onClick={this.makeAizuClickHandler(aizu).bind(this)} key={makeHashLikeStr(aizu)}>
-        //   {aizu}
-        // </button>
       );
     });
     return (
       <div className="aizu-list">
         <ul>{aizuListElements}</ul>
       </div>
-      // <div id="qa" className="wrapper">
-      //   <div className="a4_2">
-      //     {aizuListElements}
-      //   </div>
-      // </div>
     );
   }
 }
@@ -145,7 +137,7 @@ class AizuListPage extends React.Component {
   handleAizuClick(aizu) {
     console.log(aizu);// PASS
     ALMemoryReadyPromise.then((ALMemory) => {
-      ALMemory.raiseEvent('myapp/aizuSelect', aizu);
+      ALMemory.raiseEvent('word1', dic.toTokyo(aizu));
     });
   }
   render() {
