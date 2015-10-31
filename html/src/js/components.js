@@ -4,6 +4,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import Firebase from 'firebase';
+import _Promise from 'es6-promise';
+
+let Promise = _Promise.Promise;
 
 class Dic {
   constructor() {
