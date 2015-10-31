@@ -26,16 +26,16 @@
   background-color: #666;
 }
 .aizu-list ul li:nth-child(1) {
-  background-color: #B8BAF9;
+  background-color: #AA55FF;
 }
 .aizu-list ul li:nth-child(2) {
-  background-color: #FBFF97;
+  background-color: #E8804F;
 }
 .aizu-list ul li:nth-child(3) {
-  background-color: #FF9797;
+  background-color: #FBFF63;
 }
 .aizu-list ul li:nth-child(4) {
-  background-color: #63FF64;
+  background-color: #63E8DD;
 }
 .aizu-list ul li span {
   font-size: 10vh;

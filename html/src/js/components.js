@@ -36,7 +36,7 @@ class Dic {
   }
   toBy(distColumnName, originalWord) { // private method
     return new Promise((resolve, reject) => {
-      this.ref.orderByChild(distColumnName).equalTo(tokyo).on('value', (snapshot) => {
+      this.ref.orderByChild(distColumnName).equalTo(originalWord).on('value', (snapshot) => {
         resolve(snapshot.val());
       }, (error) => {
         reject(error);
@@ -125,7 +125,7 @@ class AizuList extends React.Component {
     let aizuListElements = this.state.aizuList.map((aizu) => {
       return (
         <li onClick={this.makeAizuClickHandler(aizu).bind(this)} key={makeHashLikeStr(aizu)}>
-          <span className="aizu">{aizu}</span>
+          <span className="aizu">「{aizu}」</span>
         </li>
       );
     });
@@ -139,9 +139,11 @@ class AizuList extends React.Component {
 
 class AizuListPage extends React.Component {
   handleAizuClick(aizu) {
-    console.log(aizu);// PASS
-    ALMemoryReadyPromise.then((ALMemory) => {
-      ALMemory.raiseEvent('word1', dic.toTokyo(aizu));
+    Promise.all([ALMemoryReadyPromise, dic.toTokyo(aizu)]).then((solvers) => {
+      let ALMemory = solvers[0];
+      let tokyo = solvers[1];
+      console.log(tokyo);
+      ALMemory.raiseEvent('word1', tokyo);
     });
   }
   render() {

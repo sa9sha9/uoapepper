@@ -21058,7 +21058,7 @@ var Dic = (function () {
 
       // private method
       return new Promise(function (resolve, reject) {
-        _this2.ref.orderByChild(distColumnName).equalTo(tokyo).on('value', function (snapshot) {
+        _this2.ref.orderByChild(distColumnName).equalTo(originalWord).on('value', function (snapshot) {
           resolve(snapshot.val());
         }, function (error) {
           reject(error);
@@ -21172,7 +21172,9 @@ var AizuList = (function (_React$Component) {
           _react2['default'].createElement(
             'span',
             { className: 'aizu' },
-            aizu
+            '「',
+            aizu,
+            '」'
           )
         );
       });
@@ -21203,9 +21205,11 @@ var AizuListPage = (function (_React$Component2) {
   _createClass(AizuListPage, [{
     key: 'handleAizuClick',
     value: function handleAizuClick(aizu) {
-      console.log(aizu); // PASS
-      ALMemoryReadyPromise.then(function (ALMemory) {
-        ALMemory.raiseEvent('word1', dic.toTokyo(aizu));
+      Promise.all([ALMemoryReadyPromise, dic.toTokyo(aizu)]).then(function (solvers) {
+        var ALMemory = solvers[0];
+        var tokyo = solvers[1];
+        console.log(tokyo);
+        ALMemory.raiseEvent('word1', tokyo);
       });
     }
   }, {
