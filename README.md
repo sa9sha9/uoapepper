@@ -1,2 +1,0 @@
-# uoapepper
-Pepper Developing
