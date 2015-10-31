@@ -17,8 +17,5 @@
         <Topic name="conversation_enu" src="conversation/conversation_enu.top" topicName="conversation" language="en_US" />
         <Topic name="conversation_jpj" src="conversation/conversation_jpj.top" topicName="conversation" language="ja_JP" />
     </Topics>
-    <IgnoredPaths>
-        <Path src=".DS_Store" />
-        <Path src="behavior_1" />
-    </IgnoredPaths>
+    <IgnoredPaths />
 </Package>
